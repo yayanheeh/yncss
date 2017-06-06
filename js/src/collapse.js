@@ -45,6 +45,7 @@ const Collapse = (($) => {
 
   const ClassName = {
     SHOW       : 'show',
+    FLEXSHOW   : 'flexshow',
     COLLAPSE   : 'collapse',
     COLLAPSING : 'collapsing',
     COLLAPSED  : 'collapsed'
@@ -104,7 +105,7 @@ const Collapse = (($) => {
     // public
 
     toggle() {
-      if ($(this._element).hasClass(ClassName.SHOW)) {
+      if ($(this._element).hasClass(ClassName.SHOW) || $(this._element).hasClass(ClassName.FLEXSHOW)) {
         this.hide()
       } else {
         this.show()
@@ -112,8 +113,9 @@ const Collapse = (($) => {
     }
 
     show() {
+      const showClass = this._getShowClass()
       if (this._isTransitioning ||
-        $(this._element).hasClass(ClassName.SHOW)) {
+        $(this._element).hasClass(showClass)) {
         return
       }
 
@@ -167,7 +169,7 @@ const Collapse = (($) => {
         $(this._element)
           .removeClass(ClassName.COLLAPSING)
           .addClass(ClassName.COLLAPSE)
-          .addClass(ClassName.SHOW)
+          .addClass(showClass)
 
         this._element.style[dimension] = ''
 
@@ -192,8 +194,9 @@ const Collapse = (($) => {
     }
 
     hide() {
+      const showClass = this._getShowClass()
       if (this._isTransitioning ||
-        !$(this._element).hasClass(ClassName.SHOW)) {
+        !$(this._element).hasClass(showClass)) {
         return
       }
 
@@ -212,7 +215,7 @@ const Collapse = (($) => {
       $(this._element)
         .addClass(ClassName.COLLAPSING)
         .removeClass(ClassName.COLLAPSE)
-        .removeClass(ClassName.SHOW)
+        .removeClass(showClass)
 
       if (this._triggerArray.length) {
         $(this._triggerArray)
@@ -288,7 +291,7 @@ const Collapse = (($) => {
 
     _addAriaAndCollapsedClass(element, triggerArray) {
       if (element) {
-        const isOpen = $(element).hasClass(ClassName.SHOW)
+        const isOpen = $(element).hasClass(ClassName.SHOW) || $(element).hasClass(ClassName.FLEXSHOW)
 
         if (triggerArray.length) {
           $(triggerArray)
@@ -298,6 +301,19 @@ const Collapse = (($) => {
       }
     }
 
+    _getShowClass() {
+      const tabClass = this._element.classList
+      let useFlex = $(this._element).css('display') === 'flex'
+      // Detect flex in used classes
+      for (let i = 0; i < tabClass.length; i++) {
+        const tmpDisplay = $('<div></div>').addClass(tabClass[i]).css('display')
+        if (tmpDisplay === 'flex') {
+          useFlex = true
+          break
+        }
+      }
+      return !useFlex ? ClassName.SHOW : ClassName.FLEXSHOW
+    }
 
     // static
 
