@@ -54,4 +54,4 @@ cdn:
   jquery:         https://code.jquery.com/jquery-3.2.1.slim.min.js
   jquery_hash:    "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   popper:         https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.10.8/umd/popper.min.js
-  popper_hash:    "sha256-n96swYoYKdVyLr5XatK9CzcdyrpAI0xcSlIeWOZeTAI="
+  popper_hash:    "sha384-DnkRdQ7qQnIyQu3l2I77BVrTus+ZPSPbzkftVyG/w9e7UxGp0S0a72dG5FfBY/G3"
