@@ -1,0 +1,26 @@
+ 1 Nomer-nomer Reciever  untuk TRX via SMS adalah:
+  
+    Xl                    : - 0878 5180 6000    - 0878 5300 9000       - 081 737 0000
+    IM3                 : - 0857 3288 9000    - 0856 4890 1111       - 0858 5069 8000
+    TELKOMSEL  : - 0812 3060 8000    - 0852 3206 9000       - 0852 3143 1111
+    AXIS                : - 0838 5735 7000    - 0838 5736 8000       - 0838 5735 9000
+    THREE            : - 0896 3455 8000
+
+ 2 Ganti Pin ( Hanya dapat dilakukan via sms )
+
+    Ketik                : Pin (spasi) PinLama (spasi) PinBaru
+    Contoh             : Pin 1234 8888
+
+3  Cek Saldo
+    Ketik                 : Cek (spasi) Pin
+    Contoh              : Cek 1234
+ 
+4 Pengisian Berulang dengan Kode Voucher, 
+   Nominal dan No.Hp yang sama dapat dilakukan dengan cara :
+   
+   Pengisian ke 1                    : KodeVcr.NoHp.Pin
+   Pengisian ke-2 sd ke-5       : #2.KodeVcr.NoHp.Pin sd #5.KodeVcr.NoHp.Pin
+
+5 Cara Pendaftaran Teglegram
+   Ketik                     : daftartelegram[spasi] [idtelegram] [spasi] [pin]
+   Contoh                 : daftarym abccell_jaya 1234
